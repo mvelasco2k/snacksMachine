@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package logic;
+package service;
 
 import java.util.List;
-import entities.Snack;
+import domain.Snack;
 import java.util.ArrayList;
 /**
  *
  * @author Mateo Velasco
  */
-public class Snacks {
+public class ServiceSnacksList implements IServiceSnacks{
     private static final List<Snack> snacks;
     
     //Static block to init the static list
@@ -22,11 +22,11 @@ public class Snacks {
         snacks.add(new Snack("Sandwich", 120));
     }
     
-    public static void addSnack(Snack s){
+    public void addSnack(Snack s){
         snacks.add(s);
     }
     
-    public static void showSnacks(){
+    public void showSnacks(){
         var inventorySnacks = "";
         for(var snack: snacks){
             inventorySnacks += snack.toString() + "\n";
@@ -35,7 +35,7 @@ public class Snacks {
         System.out.println(inventorySnacks);
     }
     
-    public static List<Snack> getSnacks(){
+    public List<Snack> getSnacks(){
         return snacks;
     }
 }
